@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+    <form action="/submit" method="post">
+        <input type="text"  name = "heading" id="heading" placeholder = "What shall we do today?"  autocomplete="off">
+        <textarea name="detail" id="detail" cols="60" rows="2" placeholder="Tell me the details!" autocomplete="off"></textarea>
+        <button type="submit">Let's do it! </button>
+    </form>
+    <section class="paper-background">
+        <h1><%= date %></h1>
+        
+        <% items.forEach(item => { %>
+            <div class="list"></div>
+            <div class="to-do-body">
+                <input type="checkbox" name="to-do-complete" id="complete">
+                <div class="to-do-text">
+                    <h2><%= item.header %></h2>
+                    <p><%= item.body %></p>
+                </div>
+                </div>
+        <% }) %>
+        
+        
+
+        </div>
+
+    </section>
+
+    <%- include("partials/footer") %>
